@@ -421,7 +421,7 @@ h2 {
 }
 
 /* ============================================================
-   SOLUTIONS
+   SOLUTIONS (Cards changed to links with hover SVGs)
 ============================================================ */
 
 .solutions {
@@ -435,30 +435,57 @@ h2 {
     gap: 24px;
 }
 
+/* NEW: Card is now a block link */
 .card {
+    display: block;
     min-height: 300px;
     padding: 35px;
     background: linear-gradient(145deg, #292D31, #22262A);
     border: 1px solid var(--metal-border);
     border-radius: 8px;
-    transition: 0.2s;
+    color: inherit;
+    text-decoration: none;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
 }
 
 .card:hover {
     transform: translateY(-5px);
     border-color: var(--copper);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
 }
 
-.card-number {
+/* NEW: Hidden Hover Visual */
+.card-visual {
+    max-height: 0;
+    opacity: 0;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-visual svg {
+    width: 50px;
+    height: 50px;
     color: var(--copper-light);
-    font-size: 13px;
-    letter-spacing: 2px;
-    margin-bottom: 65px;
+}
+
+.card:hover .card-visual {
+    max-height: 80px;
+    opacity: 1;
+    margin-bottom: 25px;
 }
 
 .card h3 {
     font-size: 25px;
     margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.card:hover h3 {
+    color: var(--copper-light);
 }
 
 .card p {
@@ -717,6 +744,7 @@ h2 {
     border-radius: 7px;
 }
 
+/* NEW: Using icons instead of numbers */
 .workflow-icon {
     width: 48px;
     height: 48px;
@@ -727,8 +755,7 @@ h2 {
     border: 1px solid var(--copper-light);
     border-radius: 50%;
     color: var(--copper-light);
-    font-size: 12px;
-    font-weight: bold;
+    background: rgba(194, 124, 90, 0.05);
 }
 
 .workflow-step h3 {
@@ -917,7 +944,7 @@ h2 {
 }
 
 /* ============================================================
-   WHY WALTRO IS DIFFERENT
+   WHY WALTRO IS DIFFERENT (UPDATED: SVGs instead of Numbers)
 ============================================================ */
 
 .waltro-difference {
@@ -950,12 +977,8 @@ h2 {
     border-color: var(--copper);
 }
 
-.difference-item > span {
-    display: block;
-    margin-bottom: 40px;
-    color: var(--copper-light);
-    font-size: 11px;
-    letter-spacing: 2px;
+.difference-icon {
+    margin-bottom: 35px;
 }
 
 .difference-item strong {

@@ -3,178 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WalTro Systems | Industrial Edge-AI Infrastructure</title>
+    
+    <meta property="og:title" content="Waltro Systems | Quality Intelligence">
+    <meta property="og:description" content="Waltro Systems connects manufacturing, laboratory, quality, and operational data into structured relational systems.">
+    <meta property="og:image" content="assets/waltro-social-share.jpg">
+    <meta property="og:url" content="https://www.waltrosystems.com">
+    <meta property="og:type" content="website">
+    
+    <title>WalTro Systems | Industrial Edge-AI</title>
+    
     <style>
-        /* Base Styles & Typography */
+        /* Gunmetal, Copper, and Silver Theme */
         :root {
-            --primary-bg: #0f1115;
-            --secondary-bg: #1a1d24;
-            --accent: #007bff;
-            --text-main: #e2e8f0;
-            --text-muted: #94a3b8;
+            --gunmetal: #2B2D42;
+            --gunmetal-dark: #1A1C29;
+            --copper: #C8652A;
+            --copper-hover: #A65220;
+            --silver: #C0C4CE;
+            --white: #FFFFFF;
         }
         body {
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-main);
+            background-color: var(--gunmetal-dark);
+            color: var(--silver);
             line-height: 1.6;
         }
-        a {
-            color: var(--text-main);
-            text-decoration: none;
-        }
-        
-        /* Navigation */
+
+        /* The Sticky Header */
         header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1.5rem 5%;
-            background-color: var(--secondary-bg);
-            border-bottom: 1px solid #2d3748;
+            background-color: rgba(26, 28, 41, 0.95);
+            border-bottom: 2px solid var(--copper);
+            backdrop-filter: blur(5px);
         }
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
+            color: var(--white);
             letter-spacing: 1px;
         }
+        .logo span {
+            color: var(--copper);
+        }
         .nav-links a {
+            color: var(--silver);
             margin-left: 2rem;
-            font-weight: 500;
+            text-decoration: none;
+            font-weight: 600;
             transition: color 0.3s ease;
         }
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--copper);
         }
 
         /* Hero Section */
         .hero {
-            padding: 6rem 5%;
+            padding: 8rem 5% 6rem;
             text-align: center;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
             line-height: 1.2;
         }
         .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
         }
         .button-group {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
+            flex-wrap: wrap;
         }
-        .primary-button, .secondary-button {
-            padding: 0.8rem 2rem;
+        .btn-primary {
+            background-color: var(--copper);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border: none;
             border-radius: 4px;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
         }
-        .primary-button {
-            background-color: var(--accent);
-            color: #fff;
-            border: none;
+        .btn-primary:hover {
+            background-color: var(--copper-hover);
         }
-        .primary-button:hover {
-            background-color: #0056b3;
-        }
-        .secondary-button {
+        .btn-secondary {
             background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--text-muted);
+            color: var(--silver);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--silver);
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
-        .secondary-button:hover {
-            border-color: var(--text-main);
-            background-color: rgba(255,255,255,0.05);
+        .btn-secondary:hover {
+            border-color: var(--copper);
+            color: var(--copper);
         }
 
-        /* Conversion Section (Forms) */
+        /* Formspree Conversion Section */
         .conversion-section {
+            background-color: var(--gunmetal);
+            padding: 5rem 5%;
             display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            padding: 4rem 5%;
             justify-content: center;
-            background-color: var(--secondary-bg);
         }
         .form-box {
-            background-color: var(--primary-bg);
-            padding: 2rem;
+            background-color: var(--gunmetal-dark);
+            padding: 3rem;
             border-radius: 8px;
-            border: 1px solid #2d3748;
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
+            border: 1px solid var(--copper);
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         .form-box h3 {
+            color: var(--white);
+            font-size: 1.8rem;
             margin-top: 0;
-            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        .form-box p {
+            margin-bottom: 2rem;
         }
         .waltro-contact-form input, 
         .waltro-contact-form textarea {
             width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-            background-color: var(--secondary-bg);
-            border: 1px solid #2d3748;
-            color: #fff;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            background-color: var(--gunmetal);
+            border: 1px solid var(--silver);
+            color: var(--white);
             border-radius: 4px;
             box-sizing: border-box;
+            font-size: 1rem;
         }
         .waltro-contact-form input:focus, 
         .waltro-contact-form textarea:focus {
             outline: none;
-            border-color: var(--accent);
+            border-color: var(--copper);
+        }
+        .waltro-contact-form button {
+            width: 100%;
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 2rem;
-            border-top: 1px solid #2d3748;
-            margin-top: 2rem;
-            color: var(--text-muted);
+            background-color: var(--gunmetal-dark);
+            border-top: 1px solid #3d405b;
+            color: #8d93a5;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">WalTro Systems</div>
+        <div class="logo">WalTro<span>.</span></div>
         <nav class="nav-links">
             <a href="#platform">Platform</a>
             <a href="#contact">Contact</a>
-            <a href="assets/waltro_guide.pdf" target="_blank">Architecture Guide</a>
+            <a href="assets/Waltro_Core_Foundation_v0_1_Partner_Review_Waltro_Style.pdf" target="_blank">Architecture Guide</a>
         </nav>
     </header>
 
     <section class="hero">
         <h1>Your Digital Workforce for Breweries.</h1>
-        <p>We provide localized, edge-AI infrastructure to eliminate data janitorial work, normalize historical metrics, and map your operational schemas in minutes.</p>
+        <p>By combining air-gapped data privacy, strict relational architectures, automated AI ingest pipelines, and embedded Quality Engineering tools, manufacturers can finally stop managing data—and start using it to drive unparalleled operational excellence.</p>
         <div class="button-group">
-            <a href="#contact"><button class="primary-button">Request a Demo</button></a>
-            <a href="assets/waltro_guide.pdf" target="_blank"><button class="secondary-button">Read the Blueprint (PDF)</button></a>
+            <a href="#contact" class="btn-primary">Request a Demo</a>
+            <a href="assets/Waltro_Core_Foundation_v0_1_Partner_Review_Waltro_Style.pdf" target="_blank" class="btn-secondary">View Architecture Blueprint</a>
         </div>
     </section>
 
     <section id="contact" class="conversion-section">
         <div class="form-box">
             <h3>Speak with an Architect</h3>
-            <p>Ready to see WalTro in action? Tell us about your data challenges.</p>
+            <p>Ready to see WalTro in action? Tell us about your data bottlenecks.</p>
             <form class="waltro-contact-form" action="https://formspree.io/f/YOUR_DEMO_URL_HERE" method="POST">
                 <input type="text" name="name" placeholder="Full Name" required>
                 <input type="email" name="email" placeholder="Work Email" required>
                 <input type="text" name="company" placeholder="Company (e.g., Firestone Walker)">
                 <textarea name="message" placeholder="What data challenges are you currently facing?" rows="4" required></textarea>
-                <button type="submit" class="primary-button" style="width:100%;">Submit Request</button>
+                <button type="submit" class="btn-primary">Submit Request</button>
             </form>
         </div>
     </section>

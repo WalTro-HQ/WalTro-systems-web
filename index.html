@@ -1,375 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waltro Systems | Quality Intelligence</title>
-    <meta name="description" content="Waltro Systems connects manufacturing, laboratory, quality, and operational data through structured relational architecture, analytics, traceability, SPC, and quality intelligence.">
-    
-    <meta property="og:title" content="Waltro Systems | Quality Intelligence">
-    <meta property="og:description" content="Waltro Systems connects manufacturing, laboratory, quality, and operational data into structured relational systems.">
-    <meta property="og:image" content="images/waltro-social-share.jpg"> 
-    <meta property="og:url" content="https://www.waltrosystems.com">
-    <meta property="og:type" content="website">
+    <title>WalTro Systems | Industrial Edge-AI Infrastructure</title>
+    <style>
+        /* Base Styles & Typography */
+        :root {
+            --primary-bg: #0f1115;
+            --secondary-bg: #1a1d24;
+            --accent: #007bff;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+        
+        /* Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: var(--secondary-bg);
+            border-bottom: 1px solid #2d3748;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .nav-links a {
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: var(--accent);
+        }
 
-    <link rel="stylesheet" href="style.css">
+        /* Hero Section */
+        .hero {
+            padding: 6rem 5%;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+        }
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .primary-button, .secondary-button {
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        .primary-button {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+        }
+        .primary-button:hover {
+            background-color: #0056b3;
+        }
+        .secondary-button {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--text-muted);
+        }
+        .secondary-button:hover {
+            border-color: var(--text-main);
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        /* Conversion Section (Forms) */
+        .conversion-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 4rem 5%;
+            justify-content: center;
+            background-color: var(--secondary-bg);
+        }
+        .form-box {
+            background-color: var(--primary-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #2d3748;
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+        .form-box h3 {
+            margin-top: 0;
+            color: var(--accent);
+        }
+        .waltro-contact-form input, 
+        .waltro-contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            background-color: var(--secondary-bg);
+            border: 1px solid #2d3748;
+            color: #fff;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .waltro-contact-form input:focus, 
+        .waltro-contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #2d3748;
+            margin-top: 2rem;
+            color: var(--text-muted);
+        }
+    </style>
 </head>
-
 <body>
 
-<header class="navbar">
-    <div class="logo">
-        WALTRO <span>SYSTEMS</span>
-    </div>
+    <header>
+        <div class="logo">WalTro Systems</div>
+        <nav class="nav-links">
+            <a href="#platform">Platform</a>
+            <a href="#contact">Contact</a>
+            <a href="assets/waltro_guide.pdf" target="_blank">Architecture Guide</a>
+        </nav>
+    </header>
 
-    <button class="mobile-menu-btn" aria-label="Toggle navigation">☰</button>
-
-    <nav class="nav-links">
-        <a href="#platform">Platform</a>
-        <a href="#dashboards">Dashboards</a>
-        <a href="#about">About</a>
-        <a href="#contact" class="nav-cta">Request Demo</a>
-    </nav>
-</header>
-
-<main>
-
-<section class="brand-banner">
-    <img src="images/waltro-hero.jpg" alt="Waltro Systems - Turning manufacturing data into quality intelligence">
-</section>
-
-<section class="hero">
-    <div class="hero-content">
-        <p class="eyebrow">DATA ARCHITECTURE • QUALITY ENGINEERING • INTELLIGENCE</p>
-        <h1>Waltro Systems: Your Data Already Exists. <span>We Make It Work Together.</span></h1>
-        <p class="hero-description">
-            Waltro Systems connects fragmented laboratory, quality, manufacturing, and operational data into structured relational systems—giving you the foundation to make immediate, confident release decisions and drive continuous improvement.
-        </p>
-        <div class="hero-buttons">
-            <a href="#platform" class="primary-button">Explore the Platform</a>
-            <a href="#dashboards" class="secondary-button">View Dashboards</a>
+    <section class="hero">
+        <h1>Your Digital Workforce for Breweries.</h1>
+        <p>We provide localized, edge-AI infrastructure to eliminate data janitorial work, normalize historical metrics, and map your operational schemas in minutes.</p>
+        <div class="button-group">
+            <a href="#contact"><button class="primary-button">Request a Demo</button></a>
+            <a href="assets/waltro_guide.pdf" target="_blank"><button class="secondary-button">Read the Blueprint (PDF)</button></a>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="platform" class="data-pipeline">
-    <div class="pipeline-heading">
-        <p class="eyebrow">THE WALTRO PLATFORM</p>
-        <h2>How Waltro Systems connects the data you already have.</h2>
-        <p class="pipeline-intro">Waltro creates a structured data layer between your existing systems and the intelligence your organization needs.</p>
-    </div>
-
-    <div class="pipeline-grid">
-        <div class="pipeline-column">
-            <div class="pipeline-label">SOURCE DATA</div>
-            <div class="source-stack">
-                <div class="data-chip">SPREADSHEETS<span>Excel • CSV</span></div>
-                <div class="data-chip">LAB SYSTEMS<span>LIMS • Instruments</span></div>
-                <div class="data-chip">MANUFACTURING<span>ERP • MES • Production</span></div>
-                <div class="data-chip">LEGACY DATA<span>Files • Databases • Records</span></div>
-            </div>
-        </div>
-
-        <div class="pipeline-connector">
-            <div class="flow-line"></div>
-            <div class="flow-arrow">→</div>
-        </div>
-
-        <div class="pipeline-column">
-            <div class="pipeline-label">WALTRO CORE</div>
-            <div class="waltro-core">
-                <div class="core-badge">W</div>
-                <h3>Waltro Data Architecture</h3>
-                <p>A structured relational foundation that connects operational information through standardized entities, relationships, specifications, and business rules.</p>
-                <div class="core-features">
-                    <span>Normalize</span><span>Relate</span><span>Validate</span><span>Standardize</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="pipeline-connector">
-            <div class="flow-line"></div>
-            <div class="flow-arrow">→</div>
-        </div>
-
-        <div class="pipeline-column">
-            <div class="pipeline-label">INTELLIGENCE</div>
-            <div class="source-stack">
-                <div class="data-chip output-chip">QUALITY ENGINEERING<span>SPC • Capability • OOS</span></div>
-                <div class="data-chip output-chip">PROCESS ANALYTICS<span>Trending • Metrics • Stability</span></div>
-                <div class="data-chip output-chip">TRACEABILITY<span>Batch • Lot • Product</span></div>
-                <div class="data-chip output-chip">DECISION SUPPORT<span>Alerts • Investigations • Reports</span></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="pipeline-message">
-        <span>Your existing systems don't have to be replaced.</span> Waltro connects the information between them.
-    </div>
-</section>
-
-<section id="dashboards" class="dashboard-gallery">
-    <div class="section-heading dashboard-gallery-heading">
-        <p class="eyebrow">INTELLIGENCE IN ACTION</p>
-        <h2>The Waltro Systems Architecture: Built for different manufacturing environments.</h2>
-        <p class="dashboard-gallery-intro">
-            Waltro is designed as a flexible manufacturing intelligence platform rather than an industry-specific dashboard system. Structured data architecture allows the same core approach to support different processes, measurements, quality programs, and operational environments.
-        </p>
-    </div>
-
-    <div class="dashboard-gallery-grid">
-        <article class="dashboard-showcase-card">
-            <div class="dashboard-showcase-text">
-                <span class="dashboard-tag">BREWING & BEVERAGE</span>
-                <h3>Brewing Quality Intelligence</h3>
-                <p>A quality-intelligence environment designed around brewing operations, laboratory results, process performance, release readiness, QA review events, and product traceability.</p>
-                <ul class="dashboard-feature-list">
-                    <li>Release readiness and in-spec performance</li>
-                    <li>Analytical, microbiological, and process review</li>
-                    <li>Process stability and specification monitoring</li>
-                    <li>Quality-event and alert trending</li>
-                    <li>Batch-to-package traceability</li>
-                </ul>
-                <a href="images/waltro-brewing-dashboard.png" class="dashboard-view-link">View Full Dashboard →</a>
-            </div>
-            <div class="dashboard-showcase-image">
-                <a href="images/waltro-brewing-dashboard.png">
-                    <img src="images/waltro-brewing-dashboard.png" alt="Waltro Systems brewing quality intelligence dashboard demonstration">
-                </a>
-            </div>
-        </article>
-
-        <article class="dashboard-showcase-card">
-            <div class="dashboard-showcase-text">
-                <span class="dashboard-tag">PRECISION MANUFACTURING</span>
-                <h3>Manufacturing Quality & SPC</h3>
-                <p>A quality-engineering environment built around process stability, statistical process control, capability, nonconformance analysis, inspection results, and production traceability.</p>
-                <ul class="dashboard-feature-list">
-                    <li>Cp and Cpk capability analysis</li>
-                    <li>Process stability and control monitoring</li>
-                    <li>Z-score and specification-position analysis</li>
-                    <li>Pareto and defect-driver analysis</li>
-                    <li>Lot-to-work-order traceability</li>
-                </ul>
-                <a href="images/waltro-manufacturing-dashboard.png" class="dashboard-view-link">View Full Dashboard →</a>
-            </div>
-            <div class="dashboard-showcase-image">
-                <a href="images/waltro-manufacturing-dashboard.png">
-                    <img src="images/waltro-manufacturing-dashboard.png" alt="Waltro Systems manufacturing quality and SPC dashboard demonstration">
-                </a>
-            </div>
-        </article>
-    </div>
-
-    <p class="dashboard-demo-note">
-        Dashboard concepts shown with synthetic demonstration data. Waltro interfaces can be configured around the terminology, metrics, specifications, processes, and quality requirements of each manufacturing environment.
-    </p>
-</section>
-
-<section id="about" class="about">
-    <div class="about-intro">
-        <p class="eyebrow">ABOUT WALTRO SYSTEMS</p>
-        <h2>Waltro Systems: Built by quality professionals who got tired of fighting the data.</h2>
-        <p>Waltro Systems was founded by Jeffrey Walsh and Kevin Troxell, two quality professionals whose careers were shaped by science, manufacturing, and a shared belief that quality data should do more than sit in spreadsheets, reports, and disconnected systems.</p>
-        <p>Jeffrey and Kevin first worked together at Firestone Walker Brewing Company. Kevin, a Cal Poly graduate with a degree in Biochemistry, brought deep experience in analytical chemistry, gas chromatography, GC-MS, environmental laboratory work, and quality testing. Kevin became a major influence on Jeffrey's development in analytical science and helped build the technical relationship that would eventually grow into Waltro Systems.</p>
-        <p>Jeffrey graduated from California State University, Chico with a B.S. in General Microbiology and a minor in Chemistry. His early career centered on microbiology, yeast propagation, laboratory operations, and quality systems before expanding into quality engineering, relational database modeling, and data architecture.</p>
-    </div>
-
-    <div class="founder-grid">
-        <article class="founder-card">
-            <div class="founder-initials">JW</div>
-            <div class="founder-role">CO-FOUNDER</div>
-            <h3>Jeffrey Walsh</h3>
-            <p class="founder-title">Quality Engineering • Laboratory Systems • Data Architecture</p>
-            <p>Jeffrey's background spans microbiology, laboratory operations, manufacturing quality, quality engineering, and relational database design. His career developed from hands-on laboratory science, microbiology, and yeast propagation into building quality systems and structured data architectures that make operational information easier to access, trust, analyze, and use for decision-making.</p>
-            <div class="founder-education"><span>EDUCATION</span><strong>B.S. General Microbiology</strong><p>California State University, Chico</p><p>Minor in Chemistry</p></div>
-            <div class="founder-specialties"><span>Microbiology</span><span>Laboratory Science</span><span>Yeast Propagation</span><span>Quality Engineering</span><span>Quality Systems</span><span>Relational Database Modeling</span><span>Data Architecture</span></div>
-        </article>
-
-        <article class="founder-card">
-            <div class="founder-initials">KT</div>
-            <div class="founder-role">CO-FOUNDER</div>
-            <h3>Kevin Troxell</h3>
-            <p class="founder-title">Chemistry & Analytical Science</p>
-            <p>Kevin brings extensive experience in analytical chemistry, laboratory science, environmental testing, and manufacturing quality. His expertise in gas chromatography and GC-MS provides Waltro with a deep understanding of complex analytical workflows and laboratory-generated data.</p>
-            <div class="founder-education"><span>EDUCATION</span><strong>B.S. Biochemistry</strong><p>California Polytechnic State University</p></div>
-            <div class="founder-specialties"><span>Biochemistry</span><span>Analytical Chemistry</span><span>Gas Chromatography</span><span>GC-MS</span><span>Laboratory Science</span><span>Quality Analytics</span></div>
-        </article>
-    </div>
-
-    <div class="origin-story">
-        <p class="eyebrow">HOW WALTRO BEGAN</p>
-        <h3>The problem was never a lack of data. It was making the data usable.</h3>
-        <p>Throughout their careers, Jeffrey and Kevin saw laboratories and manufacturing teams generate enormous amounts of valuable information. But finding that information, connecting it, understanding its history, and turning it into a decision was often far more difficult than it should have been.</p>
-        <p>After Jeffrey moved from Firestone Walker to Sapporo-Stone Brewing, the problem became even more apparent. His quality team was entering information into multiple locations, duplicating work, and searching through separate systems whenever they needed to answer more complex operational questions.</p>
-        <p>Jeffrey began developing tools to make that information more accessible and reliable. What started as an effort to make his team's daily work easier grew into nearly two and a half years of quality-system development using the Microsoft Power Platform.</p>
-        <p>Collaboration with IT exposed Jeffrey to relational database architecture and changed the way he approached quality data. Instead of simply building reports, he began designing structured systems capable of connecting laboratory results, process data, specifications, traceability, and operational relationships.</p>
-        <p>Jeffrey and Kevin stayed in contact throughout that journey. Their conversations increasingly focused on the same idea: laboratories work hard to generate technically complex information, but businesses often struggle to turn that information into practical operational intelligence.</p>
-        <p>That idea became Waltro Systems.</p>
-    </div>
-
-    <div class="waltro-difference">
-        <p class="eyebrow">WHY WALTRO IS DIFFERENT</p>
-        <h3>Science, quality, and data architecture in the same conversation.</h3>
-        <div class="difference-grid">
-            <div class="difference-item">
-                <div class="difference-icon">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--copper-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H15"></path><path d="M10 9H14"></path><path d="M3 14C3 19.5 7.5 22 12 22C16.5 22 21 19.5 21 14C21 8.5 14 3 14 3H10C10 3 3 8.5 3 14Z"></path></svg>
-                </div>
-                <strong>Laboratory Expertise</strong>
-                <p>We understand complex analytical and microbiological testing because we have spent our careers working inside laboratories.</p>
-            </div>
-            <div class="difference-item">
-                <div class="difference-icon">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--copper-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-                </div>
-                <strong>Quality Engineering</strong>
-                <p>We understand specifications, investigations, process performance, SPC, capability, traceability, and continuous improvement.</p>
-            </div>
-            <div class="difference-item">
-                <div class="difference-icon">
-                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--copper-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-                </div>
-                <strong>Data Architecture</strong>
-                <p>We understand how relational data structures can connect laboratory and manufacturing information so it can be trusted, analyzed, and reused.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="about-closing">
-        <p>Together, Jeffrey and Kevin bring more than <strong>25 years of combined quality experience</strong> across microbiology, chemistry, analytical science, laboratory operations, manufacturing quality, quality engineering, and data systems.</p>
-        <p class="about-personal-line">At its core, Waltro started with two quality and science nerds who believed the data their teams worked so hard to generate should be easier to use.</p>
-    </div>
-</section>
-
-<section id="contact" class="contact">
-    <div style="text-align:center;">
-        <p class="eyebrow">LET'S BUILD SOMETHING BETTER</p>
-        <h2 style="margin-bottom: 40px;">Turn operational data into quality intelligence with Waltro Systems.</h2>
-    </div>
-
-    <div class="contact-grid">
-        
-        <div class="demo-box">
-            <h3>Request a Demo</h3>
-            <p>Ready to see Waltro in action? Tell us about your data challenges.</p>
-            <form class="waltro-contact-form" action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST">
+    <section id="contact" class="conversion-section">
+        <div class="form-box">
+            <h3>Speak with an Architect</h3>
+            <p>Ready to see WalTro in action? Tell us about your data challenges.</p>
+            <form class="waltro-contact-form" action="https://formspree.io/f/YOUR_DEMO_URL_HERE" method="POST">
                 <input type="text" name="name" placeholder="Full Name" required>
                 <input type="email" name="email" placeholder="Work Email" required>
                 <input type="text" name="company" placeholder="Company (e.g., Firestone Walker)">
                 <textarea name="message" placeholder="What data challenges are you currently facing?" rows="4" required></textarea>
-                <button type="submit" class="primary-button form-submit">Submit Request</button>
+                <button type="submit" class="primary-button" style="width:100%;">Submit Request</button>
             </form>
         </div>
+    </section>
 
-        <div class="magnet-box">
-            <h3>Free Guide</h3>
-            <p>Not ready for a demo? Download our free blueprint: <strong>"The Manufacturing Data Architecture Guide"</strong>.</p>
-            <form class="waltro-magnet-form" action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST">
-                <input type="email" name="email" placeholder="Work Email" required>
-                <input type="hidden" name="requested_asset" value="Data Architecture Guide">
-                <button type="submit" class="secondary-button form-submit" style="width:100%; border:none; cursor:pointer;">Download Guide</button>
-            </form>
-        </div>
-
-    </div>
-</section>
-
-</main>
-
-<footer>
-    <div class="logo">WALTRO <span>SYSTEMS</span></div>
-    <p>© 2026 Waltro Systems</p>
-</footer>
-
-<div id="dashboard-modal" class="modal" style="display: none;">
-    <span class="close-modal">&times;</span>
-    <img class="modal-content" id="modal-image" src="" alt="Waltro Dashboard Zoom">
-    <div id="modal-caption"></div>
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    // 1. Mobile Menu Toggle
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (menuBtn && navLinks) {
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-    }
-
-    // 2. Lightbox Modal & Zoom Logic
-    const modal = document.getElementById("dashboard-modal");
-    const modalImg = document.getElementById("modal-image");
-    const captionText = document.getElementById("modal-caption");
-    const closeBtn = document.querySelector(".close-modal");
-
-    if (!modal || !modalImg) {
-        return; 
-    }
-
-    // Open Modal
-    document.querySelectorAll('.dashboard-showcase-image a, .dashboard-view-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault(); 
-            
-            modal.style.display = "flex";
-            modalImg.src = this.getAttribute('href');
-            
-            modalImg.classList.remove('zoomed-in');
-            modalImg.style.transformOrigin = 'center center';
-            
-            const card = this.closest('.dashboard-showcase-card');
-            if (card && captionText) {
-                const title = card.querySelector('h3');
-                captionText.innerText = title ? title.innerText : "Waltro Dashboard";
-            } else if (captionText) {
-                captionText.innerText = "Waltro Dashboard";
-            }
-        });
-    });
-
-    // Click-to-Zoom
-    modalImg.addEventListener('click', function(e) {
-        e.stopPropagation(); 
-        if (this.classList.contains('zoomed-in')) {
-            this.classList.remove('zoomed-in');
-            this.style.transformOrigin = 'center center';
-        } else {
-            const rect = this.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            this.style.transformOrigin = `${x}% ${y}%`;
-            this.classList.add('zoomed-in');
-        }
-    });
-
-    // Close Modal on X click
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => { 
-            modal.style.display = "none"; 
-            modalImg.classList.remove('zoomed-in'); 
-        });
-    }
-
-    // Close Modal if user clicks the dark background outside the image
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal || e.target === captionText) { 
-            modal.style.display = "none"; 
-            modalImg.classList.remove('zoomed-in'); 
-        }
-    });
-});
-</script>
+    <footer>
+        <p>&copy; 2026 WalTro Systems. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>

@@ -375,14 +375,17 @@
     const captionText = document.getElementById("modal-caption");
     const closeBtn = document.querySelector(".close-modal");
 
-    // Hijack dashboard links so they open the modal instead of a new tab
+    // Open Modal
     document.querySelectorAll('.dashboard-showcase-image a, .dashboard-view-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault(); 
             modal.style.display = "flex";
             modalImg.src = this.getAttribute('href');
             
-            // Find the title for the caption
+            // Reset zoom state when a new image opens
+            modalImg.classList.remove('zoomed-in');
+            modalImg.style.transformOrigin = 'center center';
+            
             const card = this.closest('.dashboard-showcase-card');
             if (card) {
                 captionText.innerText = card.querySelector('h3').innerText;
@@ -392,15 +395,34 @@
         });
     });
 
+    // 3. Click-to-Zoom Logic
+    modalImg.addEventListener('click', function(e) {
+        if (this.classList.contains('zoomed-in')) {
+            // Zoom out
+            this.classList.remove('zoomed-in');
+            this.style.transformOrigin = 'center center';
+        } else {
+            // Calculate where the user clicked to zoom in on that exact spot
+            const rect = this.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            
+            this.style.transformOrigin = `${x}% ${y}%`;
+            this.classList.add('zoomed-in');
+        }
+    });
+
     // Close Modal on X click
     closeBtn.addEventListener('click', () => { 
         modal.style.display = "none"; 
+        modalImg.classList.remove('zoomed-in'); // Reset zoom
     });
 
-    // Close Modal if user clicks anywhere outside the image
+    // Close Modal if user clicks the dark background (outside the image)
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) { 
+        if (e.target === modal || e.target === captionText) { 
             modal.style.display = "none"; 
+            modalImg.classList.remove('zoomed-in'); // Reset zoom
         }
     });
 </script>

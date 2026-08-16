@@ -421,78 +421,6 @@ h2 {
 }
 
 /* ============================================================
-   SOLUTIONS (Cards changed to links with hover SVGs)
-============================================================ */
-
-.solutions {
-    padding: 110px 8%;
-    background: var(--gunmetal);
-}
-
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
-/* NEW: Card is now a block link */
-.card {
-    display: block;
-    min-height: 300px;
-    padding: 35px;
-    background: linear-gradient(145deg, #292D31, #22262A);
-    border: 1px solid var(--metal-border);
-    border-radius: 8px;
-    color: inherit;
-    text-decoration: none;
-    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-color: var(--copper);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-}
-
-/* NEW: Hidden Hover Visual */
-.card-visual {
-    max-height: 0;
-    opacity: 0;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.card-visual svg {
-    width: 50px;
-    height: 50px;
-    color: var(--copper-light);
-}
-
-.card:hover .card-visual {
-    max-height: 80px;
-    opacity: 1;
-    margin-bottom: 25px;
-}
-
-.card h3 {
-    font-size: 25px;
-    margin-bottom: 15px;
-    transition: color 0.3s;
-}
-
-.card:hover h3 {
-    color: var(--copper-light);
-}
-
-.card p {
-    color: var(--text-muted);
-}
-
-/* ============================================================
    DASHBOARD GALLERY
 ============================================================ */
 
@@ -643,136 +571,6 @@ h2 {
     color: #7E858B;
     font-size: 12px;
     line-height: 1.7;
-}
-
-/* ============================================================
-   QUALITY ENGINEERING
-============================================================ */
-
-.quality-engineering {
-    padding: 110px 8%;
-    background: var(--gunmetal);
-    border-bottom: 1px solid var(--metal-border);
-}
-
-.quality-engineering-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(420px, 1.1fr);
-    gap: 70px;
-    align-items: center;
-}
-
-.quality-engineering-content {
-    max-width: 700px;
-}
-
-.quality-engineering-content h2 {
-    margin-bottom: 25px;
-}
-
-.quality-engineering-content > p:last-child {
-    color: var(--text-muted);
-    font-size: 18px;
-    line-height: 1.75;
-}
-
-.qe-capabilities {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-}
-
-.qe-item {
-    min-height: 125px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 22px;
-    background: linear-gradient(145deg, #292D31, #1C1F22);
-    border: 1px solid var(--metal-border);
-    border-left: 3px solid var(--copper);
-    border-radius: 6px;
-    transition: 0.2s;
-}
-
-.qe-item:hover {
-    transform: translateY(-3px);
-    border-color: var(--copper-dark);
-    border-left-color: var(--copper-light);
-}
-
-.qe-item span {
-    color: var(--copper-light);
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.qe-item strong {
-    color: #D5D7D9;
-    font-size: 13px;
-    line-height: 1.4;
-}
-
-/* ============================================================
-   WORKFLOW
-============================================================ */
-
-.workflow {
-    padding: 110px 8%;
-    background: var(--gunmetal-dark);
-}
-
-.workflow-intro {
-    color: var(--text-muted);
-    font-size: 19px;
-    max-width: 750px;
-    margin-top: 25px;
-}
-
-.workflow-container {
-    display: flex;
-    align-items: stretch;
-    gap: 18px;
-    margin-top: 70px;
-}
-
-.workflow-step {
-    flex: 1;
-    padding: 30px;
-    background: var(--gunmetal-light);
-    border: 1px solid var(--metal-border);
-    border-radius: 7px;
-}
-
-/* NEW: Using icons instead of numbers */
-.workflow-icon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 35px;
-    border: 1px solid var(--copper-light);
-    border-radius: 50%;
-    color: var(--copper-light);
-    background: rgba(194, 124, 90, 0.05);
-}
-
-.workflow-step h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.workflow-step p {
-    color: var(--text-muted);
-    font-size: 15px;
-}
-
-.workflow-arrow {
-    display: flex;
-    align-items: center;
-    color: var(--copper-light);
-    font-size: 28px;
 }
 
 /* ============================================================
@@ -944,7 +742,7 @@ h2 {
 }
 
 /* ============================================================
-   WHY WALTRO IS DIFFERENT (UPDATED: SVGs instead of Numbers)
+   WHY WALTRO IS DIFFERENT (Icons instead of numbers)
 ============================================================ */
 
 .waltro-difference {
@@ -1211,18 +1009,6 @@ footer {
         grid-template-columns: 1fr 55px 1.15fr 55px 1fr;
         gap: 12px;
     }
-
-    .quality-engineering-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .quality-engineering-content {
-        max-width: 800px;
-    }
-
-    .qe-capabilities {
-        max-width: 900px;
-    }
 }
 
 /* ============================================================
@@ -1278,10 +1064,6 @@ footer {
         transform: rotate(90deg);
     }
 
-    .card-container {
-        grid-template-columns: 1fr;
-    }
-
     .dashboard-showcase-card {
         grid-template-columns: 1fr;
         gap: 28px;
@@ -1289,15 +1071,6 @@ footer {
 
     .dashboard-showcase-text {
         max-width: 750px;
-    }
-
-    .workflow-container {
-        flex-direction: column;
-    }
-
-    .workflow-arrow {
-        justify-content: center;
-        transform: rotate(90deg);
     }
 
     .founder-grid {
@@ -1335,9 +1108,6 @@ footer {
     }
 
     .data-pipeline,
-    .solutions,
-    .quality-engineering,
-    .workflow,
     .about,
     .contact {
         padding: 80px 7%;
@@ -1349,10 +1119,6 @@ footer {
 
     .dashboard-showcase-card {
         padding: 24px;
-    }
-
-    .qe-capabilities {
-        grid-template-columns: 1fr;
     }
 
     .origin-story {
@@ -1413,18 +1179,6 @@ footer {
 
     .dashboard-feature-list li {
         font-size: 13px;
-    }
-
-    .quality-engineering {
-        padding: 70px 6%;
-    }
-
-    .qe-item {
-        min-height: 110px;
-    }
-
-    .qe-item span {
-        font-size: 21px;
     }
 
     .about {

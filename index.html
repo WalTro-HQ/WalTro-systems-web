@@ -346,39 +346,46 @@
     <p>© 2026 Waltro Systems</p>
 </footer>
 
-
-<div id="dashboard-modal" class="modal">
+<div id="dashboard-modal" class="modal" style="display: none;">
     <span class="close-modal">&times;</span>
-    <img class="modal-content" id="modal-image">
+    <img class="modal-content" id="modal-image" src="" alt="Waltro Dashboard Zoom">
     <div id="modal-caption"></div>
 </div>
 
-
 <script>
+document.addEventListener("DOMContentLoaded", function() {
     // 1. Mobile Menu Toggle
     const menuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
 
-    menuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
-    });
 
-    // 2. Lightbox Modal Logic
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+
+    // 2. Lightbox Modal & Zoom Logic
     const modal = document.getElementById("dashboard-modal");
     const modalImg = document.getElementById("modal-image");
     const captionText = document.getElementById("modal-caption");
     const closeBtn = document.querySelector(".close-modal");
 
+    if (!modal || !modalImg) {
+        console.warn("Lightbox elements are missing from the HTML.");
+        return; 
+    }
+
     // Open Modal
     document.querySelectorAll('.dashboard-showcase-image a, .dashboard-view-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault(); 
+            
             modal.style.display = "flex";
             modalImg.src = this.getAttribute('href');
             
@@ -387,9 +394,10 @@
             modalImg.style.transformOrigin = 'center center';
             
             const card = this.closest('.dashboard-showcase-card');
-            if (card) {
-                captionText.innerText = card.querySelector('h3').innerText;
-            } else {
+            if (card && captionText) {
+                const title = card.querySelector('h3');
+                captionText.innerText = title ? title.innerText : "Waltro Dashboard";
+            } else if (captionText) {
                 captionText.innerText = "Waltro Dashboard";
             }
         });
@@ -402,7 +410,7 @@
             this.classList.remove('zoomed-in');
             this.style.transformOrigin = 'center center';
         } else {
-            // Calculate where the user clicked to zoom in on that exact spot
+            // Calculate where the user clicked to zoom in exactly there
             const rect = this.getBoundingClientRect();
             const x = ((e.clientX - rect.left) / rect.width) * 100;
             const y = ((e.clientY - rect.top) / rect.height) * 100;
@@ -413,18 +421,21 @@
     });
 
     // Close Modal on X click
-    closeBtn.addEventListener('click', () => { 
-        modal.style.display = "none"; 
-        modalImg.classList.remove('zoomed-in'); // Reset zoom
-    });
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => { 
+            modal.style.display = "none"; 
+            modalImg.classList.remove('zoomed-in'); // Reset zoom
+        });
+    }
 
-    // Close Modal if user clicks the dark background (outside the image)
+    // Close Modal if user clicks the dark background outside the image
     modal.addEventListener('click', (e) => {
         if (e.target === modal || e.target === captionText) { 
             modal.style.display = "none"; 
             modalImg.classList.remove('zoomed-in'); // Reset zoom
         }
     });
+});
 </script>
 
 </body>
